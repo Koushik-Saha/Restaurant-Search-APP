@@ -16,14 +16,12 @@ const SearchScreen = () => {
                     location: 'NYC'
                 }
             });
-            setResult(response.data)
+            setResult(response.data.businesses)
         }
         catch (error) {
             console.error(error);
         }
     }
-
-    console.log(result)
 
     return (
         <View>
