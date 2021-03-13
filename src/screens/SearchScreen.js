@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import yelp from '../api/yelp';
+import {useEffect} from "react/cjs/react.production.min";
 
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
@@ -22,6 +23,10 @@ const SearchScreen = () => {
             setErrorMessage('Something went wrong');
         }
     };
+
+    useEffect(() => {
+        searchApi('pasta');
+    }, [])
 
     return (
         <View>
